@@ -1,0 +1,19 @@
+```
+Eureka Server - https://eureka-server-bp2h.onrender.com - maheshclasher@gmail.com ...
+```
+
+```
+PostgreSQL July 8, 2024 ->  mandytp10@gmail.com ...
+Hostname - dpg-coai73sf7o1s73dqp5e0-a
+Port - 5432
+Database - kubedb
+Username - user1
+postgres://user1:bPnvbL1MqKFfRM9MbcV7lQxZuDub0Yjp@dpg-coai73sf7o1s73dqp5e0-a/kubedb
+external - postgres://user1:bPnvbL1MqKFfRM9MbcV7lQxZuDub0Yjp@dpg-coai73sf7o1s73dqp5e0-a.singapore-postgres.render.com/kubedb
+PGPASSWORD=bPnvbL1MqKFfRM9MbcV7lQxZuDub0Yjp psql -h dpg-coai73sf7o1s73dqp5e0-a.singapore-postgres.render.com -U user1 kubedb
+```
+
+```Mongo
+mongodb+srv://admin:1234@kubeinfomongo.ptogjgd.mongodb.net/?retryWrites=true&w=majority&appName=kubeinfomongo
+
+```

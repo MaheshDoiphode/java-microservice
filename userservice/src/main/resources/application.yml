@@ -1,0 +1,25 @@
+server:
+  port: 30001
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    username: user1
+    password: bPnvbL1MqKFfRM9MbcV7lQxZuDub0Yjp
+    url: jdbc:postgresql://dpg-coai73sf7o1s73dqp5e0-a.singapore-postgres.render.com/kubedb
+  application:
+    name: UserService
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://servicediscovery:8761/eureka
+      # defaultZone: https://eureka-server-bp2h.onrender.com/eureka
+  instance:
+    prefer-ip-address: true

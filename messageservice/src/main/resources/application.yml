@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: MessageService
+  data:
+    mongodb:
+      uri: mongodb+srv://admin:1234@kubeinfomongo.ptogjgd.mongodb.net/?retryWrites=true&w=majority&appName=kubeinfomongo
+      database: kubeinfomongo
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://servicediscovery:8761/eureka
+      # defaultZone: https://eureka-server-bp2h.onrender.com/eureka
+  instance:
+    prefer-ip-address: true
+server:
+  port: 30002

@@ -1,0 +1,39 @@
+version: '3'
+services:
+  servicediscovery:
+    build:
+      context: ./servicediscovery
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 30000:8761
+    networks:
+      - kubeinfonet
+  userservice:
+    build:
+      context: ./userservice
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 30001:30001
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://dpg-coai73sf7o1s73dqp5e0-a.singapore-postgres.render.com/kubedb
+      - SPRING_DATASOURCE_USERNAME=user1
+      - SPRING_DATASOURCE_PASSWORD=bPnvbL1MqKFfRM9MbcV7lQxZuDub0Yjp
+    networks:
+      - kubeinfonet
+    depends_on:
+      - servicediscovery
+  messageservice:
+    build:
+      context: ./messageservice
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 30002:30002
+    networks:
+      - kubeinfonet
+      
+networks:
+  kubeinfonet:
+    driver: bridge

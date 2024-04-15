@@ -1,0 +1,12 @@
+eureka:
+  instance:
+    hostname: servicediscovery
+    #hostname: eureka-server-bp2h.onrender.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+server:
+  port: 8761
+spring:
+  application:
+    name: ServiceDiscovery
