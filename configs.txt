@@ -17,3 +17,37 @@ PGPASSWORD=bPnvbL1MqKFfRM9MbcV7lQxZuDub0Yjp psql -h dpg-coai73sf7o1s73dqp5e0-a.s
 mongodb+srv://admin:1234@kubeinfomongo.ptogjgd.mongodb.net/?retryWrites=true&w=majority&appName=kubeinfomongo
 
 ```
+
+```Todo
+
+Determining workspace structure
+
+Deciding which workspace information to collect
+
+Gathering workspace info
+
+To implement the new Notification Service and Delivery Service with Kafka and Redis, you'll need to do the following:
+
+1. **Create the Notification Service**: This service will subscribe to Kafka topics to receive events from the User Service and Message Service. It will also use Redis to store and manage notifications.
+
+2. **Create the Delivery Service**: This service will subscribe to a Kafka topic to receive notifications to be delivered. After attempting delivery, it will publish a delivery confirmation event back to Kafka.
+
+3. **Update the User Service and Message Service**: These services need to publish events to Kafka when significant actions occur, such as a new user registration or a new message.
+
+4. **Update Docker Compose**: You'll need to add the new services to your [docker-compose.yaml](#file:docker-compose.yaml-context) file, along with Kafka and Redis. Make sure to expose the necessary ports and set up the correct environment variables.
+
+5. **Update Eureka**: Each new service should register with Eureka for service discovery. This can be done in the application.yml file for each service, similar to your existing [application.yml](#file:application.yml-context) and [application.yml-1](#file:application.yml-1-context) files.
+
+6. **Install and Configure Kafka**: You'll need a Kafka broker running either locally or in the cloud. You can use Docker to run Kafka locally for development purposes.
+
+7. **Install and Configure Redis**: Similarly, you'll need a Redis instance. Again, Docker can be used to run Redis locally for development.
+
+8. **Create Kafka Topics**: You'll need to create Kafka topics for the events you want to publish and subscribe to.
+
+9. **Implement Event Publishing**: In your User Service and Message Service, implement the logic to publish events to Kafka when significant actions occur.
+
+10. **Implement Event Subscribing**: In your Notification Service and Delivery Service, implement the logic to subscribe to the relevant Kafka topics and react to the events.
+
+Remember, each of these steps involves writing code, updating configuration files, and potentially installing and configuring new software. It's a significant amount of work, but it will give you a robust, scalable, and highly decoupled system.
+
+```
